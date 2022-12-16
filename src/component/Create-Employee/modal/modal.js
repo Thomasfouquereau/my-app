@@ -52,21 +52,19 @@ const Background = styled.div`
     z-index: 0;
 `;
 
-const Modal = ({showModal,setShowModal}) => {
-
+const Modal = ({ showModal, setShowModal, Name, showBGModal }) => {
     return (
         <>
             {showModal ? (
                 <ModalWrapper>
                     <ModalCard>
-                        <p>Employe Created!</p>
+                        <p>{Name}</p>
                         <Button onClick={() => setShowModal(false)}>X</Button>
                     </ModalCard>
-                    <Background onClick={() => setShowModal(false)} />
+                    {showBGModal ? <Background onClick={() => setShowModal(false)} /> : null}
                 </ModalWrapper>
             ) : null}
         </>
     );
 };
-
 export default Modal;

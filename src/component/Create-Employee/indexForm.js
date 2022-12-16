@@ -154,14 +154,7 @@ export default function Form(props) {
     }
     const labelStart = "Start Date";
     const labelBirth = "Date of Birth";
-    const employeeList = props.employeeList;
-    if (employeeList.length === 0) {
-        localStorage.setItem("EmployeeList", JSON.stringify(employeeList));
-    } if (employeeList.length > 0) {
-        localStorage.removeItem("EmployeeList");
-        localStorage.setItem("EmployeeList", JSON.stringify(employeeList));
-    }
-
+    const ModalName = "Employe Created!";
     return (
         <>
             <GlobalStyle />
@@ -222,9 +215,8 @@ export default function Form(props) {
                     }]);
                     setShowModal(true)
                 }}>Create</ButtonCreate>
-                <Modal showModal={showModal} setShowModal={setShowModal} />
+                <Modal showModal={showModal} setShowModal={setShowModal} Name={ModalName} showBGModal={true} />
             </ButtonWrapper>
         </>
     );
 }
-

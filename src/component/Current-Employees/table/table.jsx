@@ -14,7 +14,6 @@ export default function DataTable(props) {
     { field: 'ZipCode', headerName: 'Zip Code', width: 130 }
   ];
   let rows = [];
-  // const storeageEmployeesList = JSON.parse(localStorage.getItem("employeesList"));
   const createRows = () => {
     props.employeeList.forEach((employee, index) => {
       rows.push({
@@ -33,10 +32,12 @@ export default function DataTable(props) {
     return rows;
   };
   createRows(props);
+  localStorage.setItem('employeeList', JSON.stringify(rows));
+  const data = JSON.parse(localStorage.getItem('employeeList'));
   return (
     <div style={{ height: 400, width: '85%' }}>
       <DataGrid
-        rows={rows}
+        rows={data}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
