@@ -6,6 +6,7 @@ import DropdownDepartement from "../Create-Employee/dropdown/dropdownDepartement
 import Modal from "../Create-Employee/modal/modal.js";
 import { Link } from "react-router-dom";
 // import EmployeeList from "../Current-Employees/indexTable";
+//import { Modal } from "npm-modal-p14-tf";
 
 const GlobalStyle = createGlobalStyle`
     body {
